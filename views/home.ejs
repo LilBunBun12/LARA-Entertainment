@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Home</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/home.css">
+  </head>
+
+  <script>
+    function submit() {
+      let a = document.getElementById("arrivalInfo").value;
+      let d = document.getElementById("departureInfo").value;
+
+      // axios({
+      //   method: "get",
+      //   url: `http://localhost:3000/landing?arrival=${a}&departure=${d}`,
+      // });
+
+      window.location.href = `http://localhost:3000/landing?arrival=${a}&departure=${d}`;
+    }
+
+    function airlineSite(){
+      window.location.href = "https://www.aa.com/homePage.do"
+    }
+
+  </script>
+
+  <body>
+    <section class="hero is-success is-fullheight">
+      <!-- Hero head: will stick at the top -->
+      <div class="hero-head head">
+        <header class="navbar">
+          <div class="container">
+            <div class="navbar-brand">
+              <a class="navbar-item">
+                <img class = "logo" id = "logo" onClick = "airlineSite()"
+                  src="../Pictures/logo.png"
+                  alt="Logo"
+                />
+              </a>
+              <span class="navbar-burger" data-target="navbarMenuHeroC">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+            </div>
+            </div>
+          </div>
+        </header>
+      </div>
+
+      <!-- Hero content: will be in the middle -->
+      <div class="hero-body"id = "back">
+        <div class="container has-text-centered">
+          <label id="myLabel" class="subtitle">Arrival Airport Code</label
+          ><br />
+          <input type="text" id="arrivalInfo" /><br />
+          <label id="myLabel" class="subtitle">Departure Airport Code</label
+          ><br />
+          <input type="text" id="departureInfo" /><br />
+          <button onclick="submit()" type="button" id="submit">submit</button>
+        </div>
+      </div>
+
+      <!-- Hero footer: will stick at the bottom -->
+      <!-- <div class="hero-foot">
+        <nav class="tabs is-boxed is-fullwidth">
+          <div class="container">
+            <ul>
+              <li class="is-active"><a>Overview</a></li>
+              <li><a>Modifiers</a></li>
+              <li><a>Grid</a></li>
+              <li><a>Elements</a></li>
+              <li><a>Components</a></li>
+              <li><a>Layout</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div> -->
+    </section>
+    <div class="frontPageContainer">
+      <button id="movie" class="frontPageButton Movies"></button>
+      <button id="music" class="frontPageButton Music"></button>
+      <button id="podcast" class="frontPageButton Podcast"></button>
+    </div>
+    <script type="module" src="./javascript/landing.js"></script>
+  </body>
+</html>

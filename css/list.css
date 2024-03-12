@@ -1,0 +1,30 @@
+
+body{
+  background-color: black;
+}
+
+h1{
+  text-align: center;
+  color: white;
+  font-size: 50px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.grid-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust the minmax values as needed */
+    gap: 10px; /* Adjust the gap between items as needed */
+    list-style: none;
+    padding: 0;
+  }
+  .grid-list li {
+    background-color: #e0e0e0; /* Optional background color for each list item */
+    padding: 10px;
+    text-align: center;
+    transition: transform .1s ease-in
+  }
+  .grid-list li:hover{
+    transform: scale(1.2);
+  }
+  .grid-list li:not(:hover){
+    opacity: 0.5;
+  }

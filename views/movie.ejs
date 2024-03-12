@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="../css/list.css" />
+    <title>Movie Options</title>
+  </head>
+
+  <body>
+    <h1>Movies</h1>
+    <ul class="grid-list" id="myList"></ul>
+    <button
+      id="reloadButton"
+      style="display: none"
+      onclick="window.location.reload();"
+    >
+      Want different movies? Click me!
+    </button>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
+  <script>
+    axios.get("http://localhost:3000/movieData").then((res) => {
+      let items = res.data;
+      const myList = document.getElementById("myList");
+
+        items.forEach((item) => {
+        const listItem = document.createElement("li");
+        listItem.textContent = `${item[0]} - Time: ${item[1]} mins`;
+        myList.appendChild(listItem);
+      });
+
+      const reloadButton = document.getElementById("reloadButton");
+      reloadButton.style.display = "block";
+    });
+  </script>
+</html>

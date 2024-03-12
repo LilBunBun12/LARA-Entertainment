@@ -1,0 +1,41 @@
+body{
+    margin: 0;
+    background-color: red;
+}
+.frontPageContainer{
+    display: flex;
+}
+
+.Movies{
+    background-image:url("/Pictures/Movie.jpeg");
+    /* background-color: aliceblue; */
+}
+
+.Music{
+    background-image: url("/Pictures/Music2.jpeg");
+}
+.Podcast{
+    background-image: url("/Pictures/Podcast.jpeg");
+}
+.AudioBooks{
+    background-image: url("/Pictures/AudioBook.jpeg");
+}
+.frontPageButton{
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:cover;
+
+    background-color:skyblue;
+    object-fit: cover;
+    color: white;
+    cursor: pointer;
+    flex: 1;
+    transition:flex-grow 0.5s;
+    border: 0px;
+    height:100vh;
+    width:100vw;
+}
+
+.frontPageButton:hover{
+    flex-grow: 2;
+}
